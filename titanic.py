@@ -48,3 +48,5 @@ survival_table = build_survival_table("train.csv")
 test_df = pd.read_csv('test.csv')             
 test_df["Survived"] = test_df.apply(lambda row: calculate_survival(survival_table, row), axis=1)
 test_df.to_csv("result.csv", cols=['PassengerId', 'Survived'], index=False)
+
+print("wrote output to result.csv")
