@@ -8,4 +8,4 @@
 
 ### Install all the things
 
-   pip install numpy scikit-learn pandas scipy sklearn-pandas
+    pip install numpy scikit-learn pandas scipy sklearn-pandas
