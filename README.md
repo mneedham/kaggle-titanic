@@ -18,6 +18,6 @@
     # Version using the ExtraTreesClassifier from scikit-learn
     python titanic-ml.ml
     
-Exporation of which classifier would work best can be seen at:
+Exploration of which classifier would work best can be seen at:
 
     python titanic-ml-explore.py
