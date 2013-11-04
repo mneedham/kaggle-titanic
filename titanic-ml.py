@@ -7,8 +7,6 @@ from sklearn.cross_validation import cross_val_score
 from sklearn import svm, neighbors
 from sklearn.preprocessing import Imputer
 
-
-
 def replace_non_numeric(df):
 	df["Sex"] = df["Sex"].apply(lambda sex: 0 if sex == "male" else 1)
 	df["Embarked"] = df["Embarked"].apply(lambda port: 0 if port == "S" else 1 if port == "C" else 2)	

@@ -16,7 +16,7 @@
     python titanic.ml
     
     # Version using the ExtraTreesClassifier from scikit-learn
-    python titanic-ml.ml
+    python titanic-ml.py
     
 Exploration of which classifier would work best can be seen at:
 
