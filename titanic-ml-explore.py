@@ -29,25 +29,17 @@ knn = neighbors.KNeighborsClassifier(weights='distance')
 support_vector_machine = svm.SVC(gamma=0.001)
 et = ExtraTreesClassifier(n_estimators=100, max_depth=None, min_samples_split=1, random_state=0)
 
-print(train_df.head())
-
 all_columns = ["Fare", "Sex", "Pclass", 'Embarked', "Age"]
 
 
 for columns in all_combinations(all_columns):
 	labels = train_df["Survived"].values
 	features = train_df[list(columns)].values
-
-	labels_train = labels[:.9 * n_samples]
-	labels_test = labels[.9 * n_samples:]
-
-	features_train = features[:.9 * n_samples]
-	features_test = features[.9 * n_samples:]
 	
-	rf_score = cross_val_score(rf, features_train, labels_train, n_jobs=-1).mean()
-	et_score = cross_val_score(et, features_train, labels_train, n_jobs=-1).mean()
-	svm_score = cross_val_score(support_vector_machine, features_train, labels_train, n_jobs=-1).mean()
-	knn_score = cross_val_score(knn, features_train, labels_train, n_jobs=-1).mean()
+	rf_score = cross_val_score(rf, features, labels, n_jobs=-1).mean()
+	et_score = cross_val_score(et, features, labels, n_jobs=-1).mean()
+	svm_score = cross_val_score(support_vector_machine, features, labels, n_jobs=-1).mean()
+	knn_score = cross_val_score(knn, features, labels, n_jobs=-1).mean()
 
 	columns = right_justify(columns)
 
